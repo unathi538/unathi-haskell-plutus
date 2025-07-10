@@ -1,0 +1,1 @@
+-- HC6T8: Implement a function that filters all even numbers from a list.
