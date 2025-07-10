@@ -1,0 +1,1 @@
+-- HC6T6: Implement a function that determines whether a given element exists in a list.
