@@ -2,39 +2,27 @@ HC5T4: Using Lambda Functions
 
 
 ```haskell
-import Data.Char (isUpper)
-
--- Function to check if a word starts with an uppercase letter
-startsWithUpper :: String -> Bool
-startsWithUpper []     = False
-startsWithUpper (x:_)  = isUpper x
-
--- Function to check if any word in the list starts with an uppercase letter
-anyStartsWithUpper :: [String] -> Bool
-anyStartsWithUpper words = any startsWithUpper words
+-- Rewrite using a lambda function
+biggerThan10 :: Int -> Bool
+biggerThan10 = \x -> x > 10
 
 -- Main function to test it
 main :: IO ()
 main = do
-    let wordsList1 = ["hello", "world", "Example"]
-    let wordsList2 = ["this", "is", "all", "lowercase"]
-    
-    putStrLn $ "Does wordsList1 contain any word starting with uppercase? " ++ show (anyStartsWithUpper wordsList1)
-    putStrLn $ "Does wordsList2 contain any word starting with uppercase? " ++ show (anyStartsWithUpper wordsList2)
+    print (biggerThan10 5)   -- Should print False
+    print (biggerThan10 15)  -- Should print True
 ```
 
 ### Explanation:
 
-* `startsWithUpper` checks if the first character of a word is uppercase using `isUpper`.
-* `any startsWithUpper words` returns `True` if **any word** in the list meets that condition.
-* The `main` function tests two lists and prints the results.
+* `\x -> x > 10` is a **lambda function** (anonymous function) equivalent to `biggerThan10 x = x > 10`.
+* The type `Int -> Bool` means it takes an `Int` and returns a `Bool`.
 
 **Expected Output:**
 
 ```
-Does wordsList1 contain any word starting with uppercase? True
-Does wordsList2 contain any word starting with uppercase? False
+False
+True
 ```
-
 
 
