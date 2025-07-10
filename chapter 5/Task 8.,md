@@ -1,3 +1,48 @@
 HC5T8: Point-Free Style
 
 
+
+### ✅ **Point-Free Version of `addFive`**
+
+```haskell
+-- Point-free style version of addFive
+addFive :: Int -> Int
+addFive = (+ 5)
+
+-- Main function to test it
+main :: IO ()
+main = do
+    putStrLn "Add 5 to 3:"
+    print (addFive 3)   -- Should print 8
+    putStrLn "Add 5 to 10:"
+    print (addFive 10)  -- Should print 15
+```
+
+---
+
+### 💡 Explanation:
+
+* The original function:
+
+  ```haskell
+  addFive x = x + 5
+  ```
+
+  is written in **pointed style** (explicitly using a parameter).
+* The point-free version removes the parameter and rewrites it as:
+
+  ```haskell
+  addFive = (+ 5)
+  ```
+
+---
+
+### ✅ **Expected Output:**
+
+```
+Add 5 to 3:
+8
+Add 5 to 10:
+15
+```
+
