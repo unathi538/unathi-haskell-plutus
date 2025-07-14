@@ -1,4 +1,4 @@
-am a student in tecTobb technologies .my student number is 8241205010017 group name name and group number, Qualification : A+comptia 
+am a student at tecTobb technologies .my student number is 8241205010017 group name nameWIMS-Cardano Global Post High School IT Innovation and Mentorship(WCG PHS IIM) and group number 009, Qualification : A+comptia 
 
 
 ```markdown
