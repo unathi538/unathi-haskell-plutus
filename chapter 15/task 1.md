@@ -1,13 +1,3 @@
-Perfect — let’s build a **Haskell program that safely reads input from a file, handles exceptions, and computes velocity**.
-
-We’ll:
-
-1. Read a file containing distance and time.
-2. Parse the values.
-3. Compute velocity = distance / time.
-4. Handle exceptions like missing file, bad input, or division by zero.
-
----
 
 ## Full Working Example
 
