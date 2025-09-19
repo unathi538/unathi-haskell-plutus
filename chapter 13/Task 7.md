@@ -1,46 +1,57 @@
-Sure! Here’s a simple example where you import the `sumNonEmpty` function from your custom `SumNonEmpty` module and use it in `main` to calculate the sum of a list.
 
----
-
-### SumNonEmpty.hs (your custom module)
+HC13T7: Write a program that imports a function from your custom SumNonEmpty module and calculates the sum of a list of numbers. 
 
 ```haskell
-module SumNonEmpty (sumNonEmpty) where
+-- Main.hs
+-- Single-file version that simulates SumNonEmpty module
 
+-- sumNonEmpty function
 sumNonEmpty :: Num a => [a] -> a
-sumNonEmpty [] = error "sumNonEmpty: empty list"
+sumNonEmpty [] = error "sumNonEmpty: cannot sum an empty list"
 sumNonEmpty xs = sum xs
-```
-
----
-
-### Main.hs (the program using SumNonEmpty)
-
-```haskell
-import SumNonEmpty (sumNonEmpty)
 
 main :: IO ()
 main = do
-    let numbers = [10, 20, 30, 40]
-    putStrLn $ "The sum of " ++ show numbers ++ " is:"
-    print $ sumNonEmpty numbers
+    putStrLn "Enter numbers separated by spaces:"
+    line <- getLine
+    let numbers = map read (words line) :: [Int]
+    putStrLn ("The sum is: " ++ show (sumNonEmpty numbers))
 ```
 
 ---
 
-### Explanation:
+## 🛠 How to Run
 
-* `SumNonEmpty` module exports `sumNonEmpty`.
-* `main` imports `sumNonEmpty` and uses it to sum a predefined list `[10,20,30,40]`.
-* The program prints the list and its sum.
+1. Open a terminal in the folder where you saved `Main.hs`.
+2. Run without compiling:
+
+```bash
+runghc Main.hs
+```
+
+3. Or compile to an executable:
+
+```bash
+ghc Main.hs -o sumtest
+./sumtest        # Linux/macOS
+sumtest.exe      # Windows
+```
 
 ---
 
-
-
-You should see:
+### Example Run
 
 ```
-The sum of [10,20,30,40] is:
-100
+Enter numbers separated by spaces:
+5 10 20 15
+The sum is: 50
 ```
+
+If you enter nothing (empty list), it will crash with:
+
+```
+*** Exception: sumNonEmpty: cannot sum an empty list
+```
+
+---
+
